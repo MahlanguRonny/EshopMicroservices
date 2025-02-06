@@ -11,7 +11,6 @@ namespace Catalog.API.Products.CreateProduct
     {
         public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
         {
-
             //Create product entity from command object
             var product = new Product
             {
