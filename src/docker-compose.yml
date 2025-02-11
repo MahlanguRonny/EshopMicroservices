@@ -1,0 +1,8 @@
+#use double space for indentation, not tab
+
+services:
+  catalogdb:
+    image: postgress
+
+volumes:
+  postgres_catalog:
