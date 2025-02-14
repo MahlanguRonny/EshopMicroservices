@@ -2,7 +2,7 @@
 
 services:
   catalogdb:
-    image: postgress
+    image: postgres
 
 volumes:
   postgres_catalog:
