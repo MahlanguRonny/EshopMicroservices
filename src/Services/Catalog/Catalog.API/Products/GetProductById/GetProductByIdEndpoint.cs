@@ -4,7 +4,7 @@ using Catalog.API.Products.GetProducts;
 namespace Catalog.API.Products.GetProductById
 {
     //public record GetProductByIdRequest();
-    public record GetProductbyIdRespone(Product Product);
+    public record GetProductbyIdResponse(Product Product);
     public class GetProductByIdEndpoint : ICarterModule
     {
         public void AddRoutes(IEndpointRouteBuilder app)
@@ -13,7 +13,7 @@ namespace Catalog.API.Products.GetProductById
             {
                 var result = await sender.Send(new GetProductByIdQuery(id));
 
-                var response = result.Adapt<GetProductbyIdRespone>();
+                var response = result.Adapt<GetProductbyIdResponse>();
 
                 return Results.Ok(response);
             }).WithName("GetProductbyId")
