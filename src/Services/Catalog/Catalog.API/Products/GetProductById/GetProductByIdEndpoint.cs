@@ -19,6 +19,7 @@ namespace Catalog.API.Products.GetProductById
             }).WithName("GetProductbyId")
             .Produces<GetProductResponse>(StatusCodes.Status200OK)
             .ProducesProblem(StatusCodes.Status400BadRequest)
+            .ProducesProblem(StatusCodes.Status404NotFound)
             .WithSummary("Get Product By Id")
             .WithDescription("Get Product By Id");
         }
