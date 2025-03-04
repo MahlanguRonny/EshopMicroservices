@@ -1,7 +1,4 @@
-﻿
-using Catalog.API.Products.CreateProduct;
-
-namespace Catalog.API.DeleteProduct
+﻿namespace Catalog.API.DeleteProduct
 {
     //public record DeleteProductRequest(Guid Id);
     public record DeleteProductResponse(bool IsSuccess);
