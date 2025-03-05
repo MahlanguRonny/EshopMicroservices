@@ -1,4 +1,4 @@
-﻿namespace Catalog.API.DeleteProduct
+﻿namespace Catalog.API.Products.DeleteProduct
 {
     //public record DeleteProductRequest(Guid Id);
     public record DeleteProductResponse(bool IsSuccess);
