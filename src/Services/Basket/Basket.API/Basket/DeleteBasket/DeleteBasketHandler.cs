@@ -11,14 +11,13 @@ namespace Basket.API.Basket.DeleteBasket
             RuleFor(x => x.UserName).NotEmpty().WithMessage("UserName is required");
         }
     }
-    public class DeleteBasketCommandHandler :
+    public class DeleteBasketCommandHandler(IBasketRepository repository) :
         ICommandHandler<DeleteBasketCommand, DeleteBasketResult>
     {
         public async Task<DeleteBasketResult> Handle(DeleteBasketCommand command, CancellationToken cancellationToken)
         {
-            //TODO: delete baseket from the database and cache
-            //Session.Delete<Basket>(command.Id)
-
+            //TODO: delete basket from the database and cache
+            await repository.DeleteBasket(command.UserName, cancellationToken);
             return new DeleteBasketResult(true);
         }
     }
