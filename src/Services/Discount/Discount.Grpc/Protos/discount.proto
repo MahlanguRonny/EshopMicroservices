@@ -8,7 +8,7 @@ package discount;
 service DiscountProtoService {
 	//Discount CRUD Operations
 	rpc GetDiscount (GetDiscountRequest) returns (CouponModel);
-	rpc CreateDiscount (CreateDiscountRequest) return (CouponModel);
+	rpc CreateDiscount (CreateDiscountRequest) returns (CouponModel);
 	rpc UpdateDiscount (UpdateDiscountRequest) returns (CouponModel);
 	rpc DeleteDiscount (DeleteDiscountRequest) returns (DeleteDiscountResponse);
 }
@@ -20,7 +20,7 @@ message GetDiscountRequest {
 message CouponModel {
 	int32 id = 1;
 	string productName = 2;
-	string description = 2;
+	string description = 3;
 	int32 amount = 4;
 }
 
