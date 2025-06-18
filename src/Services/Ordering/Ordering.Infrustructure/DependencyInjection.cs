@@ -11,8 +11,8 @@ namespace Ordering.Infrustructure
             var connectionString = configuration.GetConnectionString("Database");
 
             // add services to the container
-            //services.AddDbContext<ApplicationDbContext>(options =>
-            // options.UseSqlServer(ConnetionString));
+            services.AddDbContext<ApplicationDbContext>(options =>
+             options.UseSqlServer(connectionString));
 
             //services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
 
