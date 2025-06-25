@@ -11,13 +11,13 @@ namespace Ordering.Infrustructure
         {
             var connectionString = configuration.GetConnectionString("Database");
 
-            // add services to the container 
+            // add services to the container
             services.AddScoped<ISaveChangesInterceptor, AuditableEntityInterceptor>();
             services.AddScoped<ISaveChangesInterceptor, DispatchDomainEventsInterceptor>();
 
-            services.AddDbContext<ApplicationDbContext>((sp,options) =>
+            services.AddDbContext<ApplicationDbContext>((sp, options) =>
             {
-                options.AddInterceptors(sp.GetService<ISaveChangesInterceptor>());
+                options.AddInterceptors(sp.GetServices<ISaveChangesInterceptor>());
                 options.UseSqlServer(connectionString);
             });
 
