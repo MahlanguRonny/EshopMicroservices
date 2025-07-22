@@ -24,6 +24,6 @@ public class GetOrdersByName : ICarterModule
           .ProducesProblem(StatusCodes.Status400BadRequest)
           .ProducesProblem(StatusCodes.Status404NotFound)
           .WithSummary("Get Orders ByName")
-          .WithDescription("Get Orders By Name"); ;
+          .WithDescription("Get Orders By Name");
     }
 }
