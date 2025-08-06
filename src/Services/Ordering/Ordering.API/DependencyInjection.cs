@@ -14,6 +14,10 @@ namespace Ordering.API
             services.AddHealthChecks()
                 .AddSqlServer(configuation.GetConnectionString("Database")!);
 
+            //this is for swagger
+            services.AddEndpointsApiExplorer();
+            services.AddSwaggerGen();
+
             return services;
         }
 
@@ -27,6 +31,9 @@ namespace Ordering.API
                 {
                     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse,
                 });
+
+            app.UseSwagger();
+            app.UseSwaggerUI();
 
 
             return app;
