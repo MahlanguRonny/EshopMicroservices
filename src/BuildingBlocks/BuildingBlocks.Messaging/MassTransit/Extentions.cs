@@ -1,6 +1,14 @@
-﻿namespace BuildingBlocks.Messaging.MassTransit
+﻿using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
+
+namespace BuildingBlocks.Messaging.MassTransit
 {
     public static class Extentions
     {
+        public static IServiceCollection AddressBroker(this IServiceCollection services, Assembly? assembly = null)
+        {
+            // Implement RabbitMQ MassTransit configuration
+            return services;
+        }
     }
 }
