@@ -49,7 +49,7 @@ builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(
     return handler;
 });
 
-//Assync Communication Services
+//Async Communication Services
 builder.Services.AddMessageBroker(builder.Configuration);
 
 
